@@ -23,7 +23,7 @@ mongoose
   .connect(process.env.DB_CONNECTION)
   .then(() => {
     console.log('Connected to DB');
-    app.listen(3000, () => {
+    app.listen(process.env.PORT || 3000, () => {
       console.log('Server listening to Port 3000');
     });
   })
