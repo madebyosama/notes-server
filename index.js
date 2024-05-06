@@ -24,7 +24,10 @@ app.listen(process.env.PORT || 3000, () => {
 
 // DB CONNECTION
 mongoose
-  .connect(process.env.DB_CONNECTION)
+  .connect(process.env.DB_CONNECTION, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log('Connected to DB');
   })
