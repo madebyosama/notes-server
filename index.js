@@ -11,12 +11,7 @@ const notesRoute = require('./routes/notes');
 // MIDDLEWARES
 app.use(bodyParser.json());
 app.use(cors());
-app.use('/notes', notesRoute);
-
-// ROUTES
-app.get('/', (req, res) => {
-  res.send('We are at home');
-});
+app.use('/', notesRoute);
 
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server listening to Port 3000');
